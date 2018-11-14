@@ -1,4 +1,4 @@
-package com.nixsolutions.autoschool.bugaiov.task1.task1_1;
+package com.nixsolutions.autoschool.bugayov.task1.task1_1;
 
 import com.welcome.Hello;
 
