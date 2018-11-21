@@ -1,6 +1,6 @@
-package com.nixsolutions.autoschool.bugayov.task1.task1_1;
+package com.nixsolutions.autoschool.bugayov.task2_2;
 
-import com.welcome.Hello;
+import com.nixsolutions.autoschool.bugayov.task2_2.welcome.Hello;
 
 public class Main2 {
 

@@ -1,4 +1,4 @@
-package com.nixsolutions.autoschool.bugayov.task1.task1_1;
+package com.nixsolutions.autoschool.bugayov.task2_2;
 
 import java.util.Scanner;
 

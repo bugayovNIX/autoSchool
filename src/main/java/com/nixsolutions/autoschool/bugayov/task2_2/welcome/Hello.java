@@ -1,4 +1,4 @@
-package com.welcome;
+package com.nixsolutions.autoschool.bugayov.task2_2.welcome;
 
 public class Hello {
 
