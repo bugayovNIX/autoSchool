@@ -25,8 +25,8 @@ public class OperationsWithNumbers {
 
         int q = randomNumberGenerator();
         int w = randomNumberGenerator();
-        System.out.printf("1st task: Outcome and remainder of division of %d by %d are " +
-                "%d and %d respectively", q, w, (q / w), (q % w));
+        System.out.printf("Outcome and remainder of division of %d by %d are " +
+                "%d and %d respectively%n", q, w, (q / w), (q % w));
     }
 
     /**
@@ -41,13 +41,14 @@ public class OperationsWithNumbers {
         do {
             z = randomNumberGenerator();
         } while (!((z > 10) && (z < 99)));
-        System.out.printf("%n%n2nd task: " +
-                "The sum of all digits contained in a number %d equals to ", z);
+
+        System.out.printf("The sum of all digits contained in a number %d equals to ", z);
+
         while (z > 0) {
             sumResult += (z % 10);
             z /= 10;
         }
-        System.out.print(sumResult);
+        System.out.println(sumResult);
     }
 
     /**
@@ -66,8 +67,8 @@ public class OperationsWithNumbers {
 
         roundedNumber = (int) Math.round(n);
 
-        System.out.printf("%n%n3rd task: " +
-                "Rounding off a number %f to a nearest integer value results with %d", n, roundedNumber);
+        System.out.printf("%nRounding off a number %f to a nearest integer value results with %d%n",
+                n, roundedNumber);
     }
 
     /**
@@ -79,7 +80,7 @@ public class OperationsWithNumbers {
      */
     public void randomAddition() {
 
-        System.out.printf("%n%n4th task: Addition of integers");
+        System.out.println("\nAddition of integers");
 
         int a = randomNumberGenerator();
         int b = randomNumberGenerator();
@@ -87,7 +88,7 @@ public class OperationsWithNumbers {
         int copyOfA = a;
         int copyOfB = b;
 
-        System.out.printf("%n%nInitial values:%na = %d%nb = %d%nc = %d", a, b, c);
+        System.out.printf("%nInitial values:%na = %d%nb = %d%nc = %d", a, b, c);
 
         a += copyOfB;
         b = c - copyOfA;
@@ -96,7 +97,7 @@ public class OperationsWithNumbers {
         System.out.printf("%n%nAddition results:" +
                         "%na = a + b = %d" +
                         "%nb = c - a = %d" +
-                        "%nc = a + b + c = %d",
+                        "%nc = a + b + c = %d%n",
                 a, b, c);
     }
 }
