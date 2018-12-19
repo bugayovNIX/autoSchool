@@ -4,11 +4,9 @@ package com.nixsolutions.autoschool.bugayov.task2_4;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
-import java.util.regex.Pattern;
 
 class StringsHelper {
 
-    private String userInput;
     private String randomString = "Humpty Dumpty sat on a wall,\n" +
             "Humpty Dumpty had a great fall.\n" +
             "All the king's horses and all the king's men\n" +
@@ -73,6 +71,8 @@ class StringsHelper {
 
     void substringsInterchange() {
 
+        int index;
+        String userInput;
         String oldSubstringToReplace;
         String newSubstringToReplace;
         System.out.print("Type some words: ");
@@ -86,11 +86,15 @@ class StringsHelper {
                         "Give it one more try!\n");
                 System.out.println("The original text: " + userInput);
             }
-        } while (userInput == null || !userInput.contains(oldSubstringToReplace));
+            index = userInput.indexOf(oldSubstringToReplace);
+        } while (!userInput.contains(oldSubstringToReplace));
 
         System.out.print("Type your replacement: ");
         newSubstringToReplace = consoleInput();
-        userInput = userInput.replaceFirst(Pattern.quote(oldSubstringToReplace), newSubstringToReplace);
+
+        userInput = userInput.substring(0, index)
+                .concat(newSubstringToReplace)
+                .concat(userInput.substring(index+oldSubstringToReplace.length()));
         System.out.println("String after replacement: " + userInput);
     }
 
@@ -102,6 +106,7 @@ class StringsHelper {
 
     void longestWord() {
 
+        String userInput;
         System.out.println("Type some words: ");
         userInput = consoleInput();
         String[] splittedText = userInput.split(" ");
