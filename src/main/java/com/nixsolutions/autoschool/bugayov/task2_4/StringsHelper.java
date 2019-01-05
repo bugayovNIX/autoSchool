@@ -42,7 +42,7 @@ class StringsHelper {
                 randomString.charAt(stringLength - 1));
 
         if (stringLength % 2 != 0) {
-            System.out.printf("%nA middle charachter of the string is: '%c'",
+            System.out.printf("%nA middle character of the string is: '%c'",
                     randomString.charAt((stringLength - 1) / 2));
         }
     }
@@ -109,11 +109,11 @@ class StringsHelper {
         String userInput;
         System.out.println("Type some words: ");
         userInput = consoleInput();
-        String[] splittedText = userInput.split(" ");
+        String[] splitText = userInput.split(" ");
 
-        if (splittedText.length > 0) {
+        if (splitText.length > 0) {
             String longestWord = "";
-            for (String nextWord : splittedText) {
+            for (String nextWord : splitText) {
                 if (nextWord.length() > longestWord.length()) {
                     longestWord = nextWord;
                 }
