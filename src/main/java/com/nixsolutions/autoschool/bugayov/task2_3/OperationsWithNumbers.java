@@ -2,7 +2,7 @@ package com.nixsolutions.autoschool.bugayov.task2_3;
 
 import java.util.Random;
 
-public class OperationsWithNumbers {
+class OperationsWithNumbers {
 
     private Random randomNumberObj = new Random();
 
@@ -16,12 +16,11 @@ public class OperationsWithNumbers {
         return randomIntegerNumber;
     }
 
-    /**
-     * В переменных q и w хранятся два натуральных числа.
-     * Создайте программу, выводящую на экран результат деления q на w с остатком.
-     * Пример вывода программы (для случая, q = 21, w = 8): 21 / 8 = 2 и 5 в остатке
-     */
-    public void modulusOfTwoIntegers() {
+     // В переменных q и w хранятся два натуральных числа.
+     // Создайте программу, выводящую на экран результат деления q на w с остатком.
+     // Пример вывода программы (для случая, q = 21, w = 8): 21 / 8 = 2 и 5 в остатке
+
+    void modulusOfTwoIntegers() {
 
         int q = randomNumberGenerator();
         int w = randomNumberGenerator();
@@ -29,11 +28,10 @@ public class OperationsWithNumbers {
                 "%d and %d respectively%n", q, w, (q / w), (q % w));
     }
 
-    /**
-     * В переменной n хранится натуральное двузначное число.
-     * Создайте программу, вычисляющую сумму цифр числа n и  выводящую её на экран.
-     */
-    public void sumOfDigitsContainedInNumber() {
+     // В переменной n хранится натуральное двузначное число.
+     //Создайте программу, вычисляющую сумму цифр числа n и  выводящую её на экран.
+
+    void sumOfDigitsContainedInNumber() {
 
         int sumResult = 0;
         int z;
@@ -51,12 +49,11 @@ public class OperationsWithNumbers {
         System.out.println(sumResult);
     }
 
-    /**
-     * В переменной n хранится вещественное число с ненулевой дробной частью.
-     * Создайте программу, округляющую число n до ближайшего целого и
-     * выводящую результат на экран.
-     */
-    public void roundDoubleTypeNumber() {
+     // В переменной n хранится вещественное число с ненулевой дробной частью.
+     // Создайте программу, округляющую число n до ближайшего целого и
+     // выводящую результат на экран.
+
+    void roundDoubleTypeNumber() {
 
         int roundedNumber;
         double n;
@@ -71,14 +68,13 @@ public class OperationsWithNumbers {
                 n, roundedNumber);
     }
 
-    /**
-     * Даны три переменные a, b и c.  Изменить значения этих переменных так, чтобы  в
-     * - a хранилось значение a+b
-     * - b хранилась разность старых значений c−a
-     * - c хранилось сумма старых значений a+b+c.
-     *  Например, a=0, b=2, c=5, тогда новые значения a=2, b=5 и c=7
-     */
-    public void randomAddition() {
+     // Даны три переменные a, b и c.  Изменить значения этих переменных так, чтобы  в
+     // - a хранилось значение a+b
+     // - b хранилась разность старых значений c−a
+     // - c хранилось сумма старых значений a+b+c.
+     //  Например, a=0, b=2, c=5, тогда новые значения a=2, b=5 и c=7
+
+    void randomAddition() {
 
         System.out.println("\nAddition of integers");
 

@@ -2,9 +2,9 @@ package com.nixsolutions.autoschool.bugayov.task2_2;
 
 import java.util.Scanner;
 
-public class HelloWorld {
+class HelloWorld {
 
-    public String userNameInput() {
+    String userNameInput() {
         String userInput;
         try (Scanner readFromConsole = new Scanner(System.in)) {
             userInput = readFromConsole.nextLine();

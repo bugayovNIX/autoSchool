@@ -14,8 +14,10 @@ class StringsHelper {
 
     // console input reader
     private String consoleInput() {
+
         String userInput = "";
         BufferedReader readConsoleInput = new BufferedReader(new InputStreamReader(System.in));
+
         try {
             userInput = readConsoleInput.readLine();
         } catch (IOException e) {

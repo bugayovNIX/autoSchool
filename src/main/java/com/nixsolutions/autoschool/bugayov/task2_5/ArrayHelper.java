@@ -3,11 +3,12 @@ package com.nixsolutions.autoschool.bugayov.task2_5;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
-class ArrayHelper {
+public class ArrayHelper {
 
     // reads and validates random numbers being entered from keyboard
-    private int numberConsoleReader() {
+    public int numberConsoleReader() {
 
         Double parsedString;
         int finalNumber = 0;
@@ -57,7 +58,7 @@ class ArrayHelper {
         return finalNumber;
     }
 
-    private String stringConsoleReader() {
+    public String stringConsoleReader() {
 
         String userInput = "";
         BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
@@ -87,14 +88,14 @@ class ArrayHelper {
         for (int i = 0; i < arrayOfInts.length; i++) {
             arrayOfInts[i] = numberConsoleReader();
         }
-        return  arrayOfInts;
+        return arrayOfInts;
     }
 
     void max(int[] array) {
 
         int maxNumber = array[0];
         for (int nextNumber : array) {
-                maxNumber = nextNumber > maxNumber ? nextNumber : maxNumber;
+            maxNumber = nextNumber > maxNumber ? nextNumber : maxNumber;
         }
         System.out.println(maxNumber);
     }
@@ -167,12 +168,12 @@ class ArrayHelper {
                 "(confirm each number pressing 'Enter')" +
                 "\nNOTE: values will be truncated in case of being out of range: \n");
 
-        for(int i = 0; i < numArray.length; i++) {
+        for (int i = 0; i < numArray.length; i++) {
             numArray[i] = numberConsoleReader();
             numArrayReversed[(numArray.length - 1) - i] = numArray[i];
         }
 
-        numArray = numArrayReversed;
+        numArray = Arrays.copyOf(numArrayReversed, numArray.length);
 
         for (int nextItem : numArray) {
             System.out.println(nextItem);
@@ -192,22 +193,17 @@ class ArrayHelper {
     void arraysTwoFromOne() {
 
         int[] prime = new int[20];
-        int[] heirOne = new int[prime.length / 2];
-        int[] heirTwo = new int[prime.length / 2];
+        int[] heirOne;
+        int[] heirTwo;
 
-        for(int i = 0; i < prime.length; i++) {
+        for (int i = 0; i < prime.length; i++) {
             prime[i] = numberConsoleReader();
         }
 
-        for(int i = 0; i < prime.length / 2; i++) {
-            heirOne[i] = prime[i];
-        }
+        heirOne = Arrays.copyOfRange(prime, 0, prime.length / 2);
+        heirTwo = Arrays.copyOfRange(prime, prime.length / 2, prime.length);
 
-        for(int i = 0, j = prime.length / 2; j < prime.length; i++, j++) {
-            heirTwo[i] = prime[j];
-        }
-
-        for(int nextItem : heirTwo) {
+        for (int nextItem : heirTwo) {
             System.out.println(nextItem);
         }
     }
