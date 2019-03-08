@@ -81,9 +81,7 @@ class CollectionsHelper {
             mapOfStrings.put(keyForMap, valueForMap);
         }
 
-        for (Map.Entry<String, String> mappedPair : mapOfStrings.entrySet()) {
-            System.out.printf("\n%s - %s", mappedPair.getKey(), mappedPair.getValue());
-        }
+        printoutCollection(mapOfStrings, 0);
 
     }
 
@@ -154,8 +152,8 @@ class CollectionsHelper {
         }
 
         for (Map.Entry<String, Object> mappedPair : mapOfStringsAndObjects.entrySet()) {
-            Cat valueUnderlyingObject = (Cat) (mappedPair.getValue());
-            System.out.printf("\n%s - %s", mappedPair.getKey(), valueUnderlyingObject.getName());
+            Cat extractedValue = (Cat) (mappedPair.getValue());
+            System.out.printf("\n%s - %s", mappedPair.getKey(), extractedValue.getName());
         }
 
     }
@@ -338,10 +336,7 @@ class CollectionsHelper {
         }
 
         System.out.print("\nContents of the map:");
-        for (Map.Entry<String, String> mappedPair : mapOfStrings.entrySet()) {
-            System.out.printf("\n%s - %s", mappedPair.getKey(), mappedPair.getValue());
-        }
-
+        printoutCollection(mapOfStrings, 0);
         System.out.println("\nThere are no duplicates in the map since one can not contain them by design.");
     }
 
@@ -404,9 +399,7 @@ class CollectionsHelper {
         printoutCollection(mapOfStrings, 0);
         Iterator<Map.Entry<String, String>> mapOfStringsIterator = mapOfStrings.entrySet().iterator();
 
-        for (Map.Entry<String, String> mappedPair : mapOfStrings.entrySet()) {
-            valuesToCompare.add(mappedPair.getValue());
-        }
+        printoutCollection(mapOfStrings, 2);
 
         for (int i = 0; i < valuesToCompare.size() - 1; i++) {
             String valueToCompare = valuesToCompare.get(i);
