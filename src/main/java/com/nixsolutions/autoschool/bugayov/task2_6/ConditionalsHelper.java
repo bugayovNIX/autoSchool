@@ -1,10 +1,11 @@
 package com.nixsolutions.autoschool.bugayov.task2_6;
 
 import java.util.Random;
+
 import com.nixsolutions.autoschool.bugayov.task2_5.ArrayHelper;
 
 class ConditionalsHelper {
-    
+
     private ArrayHelper arrayHelper = new ArrayHelper();
 
     // Задачи на условные операторы
@@ -14,7 +15,7 @@ class ConditionalsHelper {
     void minOfTwoInts() {
 
         int[] twoInts = new int[2];
-        System.out.println("Please enter two random numbers (confirm each pressing 'Enter'): ");
+        System.out.println("Enter two random numbers (confirm each pressing 'Enter'): ");
         twoInts[0] = arrayHelper.numberConsoleReader();
         twoInts[1] = arrayHelper.numberConsoleReader();
 
@@ -33,7 +34,7 @@ class ConditionalsHelper {
 
         int maxNumber = 0;
         int[] fourInts = new int[4];
-        System.out.println("Please enter four random numbers (confirm each pressing 'Enter'): ");
+        System.out.println("Enter four random numbers (confirm each pressing 'Enter'): ");
 
         for (int i = 0; i < fourInts.length; i++) {
             fourInts[i] = arrayHelper.numberConsoleReader();
@@ -49,7 +50,7 @@ class ConditionalsHelper {
     void intsInDescOrder() {
 
         int[] threeInts = new int[3];
-        System.out.println("Please enter three random numbers (confirm each pressing 'Enter'): ");
+        System.out.println("Enter three random numbers (confirm each pressing 'Enter'): ");
 
         threeInts[0] = arrayHelper.numberConsoleReader();
         threeInts[1] = arrayHelper.numberConsoleReader();
@@ -83,7 +84,7 @@ class ConditionalsHelper {
     void compareTwoNames() {
 
         String[] twoNames = new String[2];
-        System.out.println("Please enter two any names (confirm each with 'Enter'): ");
+        System.out.println("Enter two any names (confirm each with 'Enter'): ");
 
         twoNames[0] = arrayHelper.stringConsoleReader().trim();
         twoNames[1] = arrayHelper.stringConsoleReader().trim();
@@ -111,9 +112,9 @@ class ConditionalsHelper {
         String aName;
         int anAge;
 
-        System.out.println("Please enter a name (confirm pressing 'Enter'): ");
+        System.out.println("Enter a name (confirm pressing 'Enter'): ");
         aName = arrayHelper.stringConsoleReader().trim();
-        System.out.println("Please enter an age (confirm pressing 'Enter'): ");
+        System.out.println("Enter an age (confirm pressing 'Enter'): ");
         anAge = arrayHelper.numberConsoleReader();
 
         if (anAge < 18) {
@@ -123,16 +124,14 @@ class ConditionalsHelper {
         }
     }
 
-    /*
-    7 За семь попыток угадать число. При каждой попытке вам будет выводиться сообщение - "Мало" или "Много".
-    Если угадаете, уложившись в семь попыток, то выводится сообщение "Угадал :)" и программа завершает работу.
-    Если по истечении 7 попыток число не угадывается, то выводится сообщение "Не угадал :(" и завершается работа. 
-    Для генерации секретного числа используете код:
-    Random random = new Random();
-    int secret;
-    // Генерируем число от 0 до 20
-    secret = random.nextInt(20 + 1);
-    */
+    //    7 За семь попыток угадать число. При каждой попытке вам будет выводиться сообщение - "Мало" или "Много".
+    //    Если угадаете, уложившись в семь попыток, то выводится сообщение "Угадал :)" и программа завершает работу.
+    //    Если по истечении 7 попыток число не угадывается, то выводится сообщение "Не угадал :(" и завершается работа. 
+    //    Для генерации секретного числа используете код:
+    //    Random random = new Random();
+    //    int secret;
+    //    // Генерируем число от 0 до 20
+    //    secret = random.nextInt(20 + 1);
 
     void guessTheNumber() {
 

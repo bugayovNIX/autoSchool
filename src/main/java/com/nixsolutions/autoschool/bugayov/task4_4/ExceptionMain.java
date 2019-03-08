@@ -1,4 +1,4 @@
-package com.nixsolutions.autoschool.bugayov.task4_3;
+package com.nixsolutions.autoschool.bugayov.task4_4;
 
 public class ExceptionMain {
 

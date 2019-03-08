@@ -42,9 +42,9 @@ class LoopsHelper {
         int iterator;
         String randomString;
 
-        System.out.println("Please enter any text (confirm input pressing 'Enter'): ");
+        System.out.println("Enter any text (confirm input pressing 'Enter'): ");
         randomString = arrayHelper.stringConsoleReader();
-        System.out.println("Please enter a number from 1 to 10 " +
+        System.out.println("Enter a number from 1 to 10 " +
                 " (confirm your choice pressing 'Enter'): ");
         iterator = arrayHelper.numberConsoleReader();
 
@@ -117,7 +117,7 @@ class LoopsHelper {
         int y;
 
         do {
-            System.out.println("Please enter lengths to build a rectangle" +
+            System.out.println("Enter lengths to build a rectangle" +
                     " (confirm each with 'Enter'): ");
             x = arrayHelper.numberConsoleReader();
             y = arrayHelper.numberConsoleReader();
@@ -175,7 +175,7 @@ class LoopsHelper {
 
     void makeLoveNotWar() {
 
-        System.out.println("Please enter a name (confirm input with 'Enter'): ");
+        System.out.println("Enter a name (confirm input with 'Enter'): ");
         String aName = arrayHelper.stringConsoleReader();
 
         if (!aName.equals("") && aName.equalsIgnoreCase("forest")) {

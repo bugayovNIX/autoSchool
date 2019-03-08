@@ -193,17 +193,22 @@ public class ArrayHelper {
     void arraysTwoFromOne() {
 
         int[] prime = new int[20];
-        int[] heirOne;
-        int[] heirTwo;
+        int[] firstHalf;
+        int[] secondHalf;
+
+        System.out.println("Type 20 random numbers " +
+                "(confirm each pressing 'Enter')" +
+                "\nNOTE: values will be truncated in case of being out of range: \n");
 
         for (int i = 0; i < prime.length; i++) {
             prime[i] = numberConsoleReader();
         }
 
-        heirOne = Arrays.copyOfRange(prime, 0, prime.length / 2);
-        heirTwo = Arrays.copyOfRange(prime, prime.length / 2, prime.length);
+        firstHalf = Arrays.copyOfRange(prime, 0, prime.length / 2);
+        secondHalf = Arrays.copyOfRange(prime, prime.length / 2, prime.length);
 
-        for (int nextItem : heirTwo) {
+        System.out.printf("\nSecond half of the array:\n");
+        for (int nextItem : secondHalf) {
             System.out.println(nextItem);
         }
     }

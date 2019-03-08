@@ -38,7 +38,7 @@ public class ShapeMain {
         // вывести отсортированный массив на консоли в виде : Имя, S=площадь
 
         for(int i = 0; i < arrayOfShapes.length; i++) {
-            System.out.printf("\n%d. %s, S=%s",
+            System.out.printf("\n%d.\t %s,\t\tS=%s",
                     i+1,
                     arrayOfShapes[i].name,
                     String.format("%.3f", arrayOfShapes[i].getArea()));

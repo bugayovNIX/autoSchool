@@ -1,6 +1,6 @@
-package com.nixsolutions.autoschool.bugayov.task4_3;
+package com.nixsolutions.autoschool.bugayov.task4_4;
 
-public class ExceptionTryCatchHelper {
+class ExceptionTryCatchHelper {
     void tryCatchSleep() {
         try {
             System.out.println("Timeout 3 sec...");
