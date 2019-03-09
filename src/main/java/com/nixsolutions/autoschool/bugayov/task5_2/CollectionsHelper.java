@@ -386,10 +386,12 @@ class CollectionsHelper {
     void mapWithValueDuplicates() {
 
         List<String> valuesToCompare = new ArrayList<>();
-        Set<String> setOfDups = new HashSet<>();
+        Set<String> setOfDuplicates = new HashSet<>();
         mapOfStrings = new HashMap<>();
         mapOfStrings.put("surname_11", "name_4");
         mapOfStrings.put("surname_12", "name_4");
+        mapOfStrings.put("surname_13", "name_7");
+        mapOfStrings.put("surname_14", "name_8");
 
         for (int i = 1; i != 10; i++) {
             mapOfStrings.put("surname_" + i, "name_" + i);
@@ -399,21 +401,23 @@ class CollectionsHelper {
         printoutCollection(mapOfStrings, 0);
         Iterator<Map.Entry<String, String>> mapOfStringsIterator = mapOfStrings.entrySet().iterator();
 
-        printoutCollection(mapOfStrings, 2);
+        for (Map.Entry<String, String> mappedPair : mapOfStrings.entrySet()) {
+            valuesToCompare.add(mappedPair.getValue());
+        }
 
         for (int i = 0; i < valuesToCompare.size() - 1; i++) {
             String valueToCompare = valuesToCompare.get(i);
             for (int j = valuesToCompare.size() - 1; j > i + 1; j--) {
                 String isDup = valuesToCompare.get(j);
                 if (valueToCompare.equals(isDup)) {
-                    setOfDups.add(valueToCompare);
+                    setOfDuplicates.add(valueToCompare);
                 }
             }
         }
 
-        if (setOfDups.size() > 0) {
+        if (setOfDuplicates.size() > 0) {
             mapOfStringsIterator.forEachRemaining(mappedPair -> {
-                for (String dupValue : setOfDups) {
+                for (String dupValue : setOfDuplicates) {
                     if (mappedPair.getValue().equals(dupValue)) {
                         mapOfStringsIterator.remove();
                     }
@@ -423,6 +427,11 @@ class CollectionsHelper {
 
         System.out.print("\n\nContents after removal entries with name duplicates:");
         printoutCollection(mapOfStrings, 0);
+
+        System.out.println("\n\nDuplicate values:");
+        for (String dupVal : setOfDuplicates) {
+            System.out.println(dupVal);
+        }
     }
 
 //    //17.
@@ -432,3 +441,4 @@ class CollectionsHelper {
 //    // Обратить внимание на количество записей в получившейся коллекции. 
 //    // 4. Вывести содержимое Map на экран.
 }
+
