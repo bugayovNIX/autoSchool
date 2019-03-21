@@ -22,13 +22,22 @@ public class StreamMain {
         randomList.add("");
         randomList.add("");
         randomList.add("");
+
+        //можно было или в цикле сделать  randomList.add("");
+        //или List<String> randomLis = Arrays.asList("", "", "", "", "");
+
         Random randomNumberGenerator = new Random();
+
+        //т.к. у тебя в коде дальше рандом генератор используется 1 раз, то можно не инициализировать объект а
+        // ниже сразу юзать new Random().nextInt(26)
 
         for (int i=5; i<50; i++) {
             String valueToAdd = "";
             for (int j=0; j<i+1; j++) {
                 char aLetter = (char) (97+(randomNumberGenerator.nextInt(26)));
                 valueToAdd = valueToAdd.concat(""+aLetter);
+                // странная конструкция, можно просто valueToAdd +=aLetter;
+                // а на будущее посмотри на методы org.apache.commons.lang3.RandomStringUtils
             }
             randomList.add(valueToAdd);
         }
