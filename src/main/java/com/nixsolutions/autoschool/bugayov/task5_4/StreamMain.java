@@ -1,7 +1,6 @@
 package com.nixsolutions.autoschool.bugayov.task5_4;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -17,18 +16,25 @@ public class StreamMain {
     // - элементы списка в алфавитном порядке.
 
         List<String> randomList = new ArrayList<>();
-        randomList.add("");
-        randomList.add("");
-        randomList.add("");
-        randomList.add("");
-        randomList.add("");
-        Random randomNumberGenerator = new Random();
+        for (int i=0; i<5; i++) { randomList.add(""); }
+
+        //можно было или в цикле сделать  randomList.add("");
+        //или List<String> randomLis = Arrays.asList("", "", "", "", "");
+        //И: от последнего варианта отказался сознательно т.к. возвращается массив фикс-го размера,
+        //т.е. с добавленем элементо в дальнейшем будут траблы
+        //переделал циклом
+
+
+        // перенес инициализацию Random в цикл
 
         for (int i=5; i<50; i++) {
             String valueToAdd = "";
             for (int j=0; j<i+1; j++) {
-                char aLetter = (char) (97+(randomNumberGenerator.nextInt(26)));
-                valueToAdd = valueToAdd.concat(""+aLetter);
+                char aLetter = (char) (97+(new Random().nextInt(26)));
+                valueToAdd += aLetter;
+                //"странная конструкция" была тк на нее не ругался Lint
+                //но оказывается += под капотом юзает new StringBuilder().append(str1).append(str2).toString();
+                //что вероятно оптимальней для длинной итерации
             }
             randomList.add(valueToAdd);
         }
