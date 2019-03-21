@@ -18,6 +18,7 @@ public class StreamMain {
         List<String> randomList = new ArrayList<>();
         for (int i=0; i<5; i++) { randomList.add(""); }
 
+        //1
         //можно было или в цикле сделать  randomList.add("");
         //или List<String> randomLis = Arrays.asList("", "", "", "", "");
 
@@ -25,7 +26,7 @@ public class StreamMain {
         //т.е. с добавленем элементо в дальнейшем будут траблы
         //переделал циклом
 
-
+        //2
         //т.к. у тебя в коде дальше рандом генератор используется 1 раз, то можно не инициализировать объект а
         // ниже сразу юзать new Random().nextInt(26)
 
@@ -36,6 +37,7 @@ public class StreamMain {
             for (int j=0; j<i+1; j++) {
                 char aLetter = (char) (97+(new Random().nextInt(26)));
                 valueToAdd += aLetter;
+                //3
                 //"странная конструкция" была тк на нее не ругался Lint
                 //но оказывается += под капотом юзает new StringBuilder().append(str1).append(str2).toString();
                 //что вероятно оптимальней для длинной итерации
