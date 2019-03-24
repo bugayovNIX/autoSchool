@@ -34,7 +34,7 @@ public class UiForMavenTest {
 //        WebDriver driver = new ChromeDriver();
 
         DesiredCapabilities capability = DesiredCapabilities.chrome();
-        String gridHubUrl = "http://178.151.75.114:4444/wd/hub";
+        String gridHubUrl = "http://10.8.4.34:4444/wd/hub";
 //        capability.setBrowserName(DesiredCapabilities.chrome().getBrowserName());
         WebDriver driver = null;
         try {
