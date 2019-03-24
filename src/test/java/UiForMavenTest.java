@@ -11,31 +11,40 @@ import java.net.URL;
 
 public class UiForMavenTest {
 
-//    @Test
-//    public void testAmazon() {
+
+    DesiredCapabilities capability = DesiredCapabilities.chrome();
+    String gridHubUrl = "http://10.8.4.34:4444/wd/hub";
+
+    @Test
+    public void testAmazon() {
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.get("https://www.amazon.com");
-//
-//        WebElement searchField = driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']"));
-//        WebElement goButton = driver.findElement(By.xpath("//input[@value='Go']"));
-//
-//        searchField.sendKeys("puzzle");
-//        goButton.click();
-//
-//        assert (driver.getTitle().contains("puzzle"));
-//        driver.quit();
-//    }
+
+        WebDriver driver = null;
+        try {
+            driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        driver.manage().window().maximize();
+        driver.get("https://www.amazon.com");
+
+        WebElement searchField = driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']"));
+        WebElement goButton = driver.findElement(By.xpath("//input[@value='Go']"));
+
+        searchField.sendKeys("puzzle");
+        goButton.click();
+
+        assert (driver.getTitle().contains("puzzle"));
+        driver.quit();
+    }
 
     @Test
     public void testApple() {
 //        WebDriverManager.chromedriver().setup();
 //        WebDriver driver = new ChromeDriver();
 
-        DesiredCapabilities capability = DesiredCapabilities.chrome();
-        String gridHubUrl = "http://10.8.4.34:4444/wd/hub";
-//        capability.setBrowserName(DesiredCapabilities.chrome().getBrowserName());
         WebDriver driver = null;
         try {
             driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
