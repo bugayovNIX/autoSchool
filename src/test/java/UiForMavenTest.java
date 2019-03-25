@@ -13,7 +13,7 @@ public class UiForMavenTest {
 
 
     DesiredCapabilities capability = DesiredCapabilities.chrome();
-    String gridHubUrl = "http://10.8.4.34:4444/wd/hub";
+    String gridHubUrl = "http://10.10.21.243:4444/wd/hub";
 
     @Test
     public void testAmazon() {
