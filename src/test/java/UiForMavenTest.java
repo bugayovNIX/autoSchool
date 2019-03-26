@@ -3,8 +3,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.remote.DesiredCapabilities;
+//import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,20 +13,20 @@ import java.net.URL;
 public class UiForMavenTest {
 
 
-    DesiredCapabilities capability = DesiredCapabilities.chrome();
-    String gridHubUrl = "http://10.10.21.243:4444/wd/hub";
+//    DesiredCapabilities capability = DesiredCapabilities.chrome();
+//    String gridHubUrl = "http://:4444/wd/hub";
 
     @Test
     public void testAmazon() {
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
 
-        WebDriver driver = null;
-        try {
-            driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+//        WebDriver driver = null;
+//        try {
+//            driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
 
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com");
@@ -42,15 +43,15 @@ public class UiForMavenTest {
 
     @Test
     public void testApple() {
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
 
-        WebDriver driver = null;
-        try {
-            driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+//        WebDriver driver = null;
+//        try {
+//            driver = new RemoteWebDriver(new URL(gridHubUrl), capability);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
 
         driver.manage().window().maximize();
         driver.get("https://pn.com.ua");
